@@ -9,6 +9,7 @@ function App() {
     <>
       <Header/>
       <Menu/>
+      <h2>v1</h2>
     </>
   );
 }
