@@ -1,0 +1,28 @@
+.indicator{
+    width: 300px;
+    height: 400px;
+    background-color: #282D35;
+    border-radius: 58px;
+    box-shadow: 0px 0px 25px 3px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    flex-direction: column;
+    font-weight: 600;
+    transition: all 0.3s linear;
+    
+}
+
+.indicator:hover {
+    box-shadow: 0px 0px 15px 3px rgba(100, 222, 149, 0.7);
+}
+
+.bar{
+    width: 216px;
+}
+
+.title{
+    color: #FFFFFF;
+    font-size: 28px;
+    line-height: 63px;
+}

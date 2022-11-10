@@ -1,0 +1,20 @@
+.menu{
+    height: 80px;
+    background-color: #30475E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.menu h1{
+    font-weight: 600;
+    color: #F2A365;
+    font-size: 38px;
+}
+
+.leaf__ico{
+    font-size: 38px;
+    color: #64DE95;
+}
