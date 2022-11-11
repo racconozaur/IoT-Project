@@ -9,6 +9,7 @@ const DATA = {
     "Temperature": 25.8
   }
 
+// const objDATA = JSON.parse(DATA)
 
 
 const values = Object.keys(DATA)
@@ -17,13 +18,12 @@ const data = values.map(i =>
   <IndicatorBar key={Math.random()} data={i} value={DATA[i]}/>
 )
 
-
-
 const Menu = () => {
     return (
         <main className={cs.menu}>
             {data}
         </main>
+        
     );
 };
 
