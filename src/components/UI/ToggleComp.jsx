@@ -1,25 +1,33 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Toggle from 'react-toggle'
 import "react-toggle/style.css"
 import cs from './ToggleComp.module.css'
+import {db} from '../../firebase-config'
+import { set, ref, onValue, remove, update } from "firebase/database";
 
 const ToggleComp = (props) => {
 
-    const [toggleIsOn, setToggleIsOn] = useState(false)
+    
+
+    const [LED, setLEDIsOn] = useState(false)
+
+    
 
     const toggleHandler = () => {
-        setToggleIsOn(!toggleIsOn)
+        setLEDIsOn(!LED)
+        update(ref(db, `/`), {LED});
     }
 
     return (
        <div className={cs.toggleContainer}>
             <Toggle
                 id='cheese-status'
-                defaultChecked={toggleIsOn}
+                defaultChecked={!LED}
                 onChange={toggleHandler} 
             />
             <label className={cs.toggleLabel} htmlFor='cheese-status'>{props.name}</label>
        </div>
+       
     );
 };
 
