@@ -52,6 +52,7 @@ const Menu = (props) => {
             <div className={cs.indicatorMenu}>
                 <ToggleComp name={'Light'} property={'LED'} />
 		        <ToggleComp name={'Motor'} property={'Motor'} />
+                <ToggleComp name={'Waterpump'} property={'Waterpump'} />
             </div>
         </main>
         
