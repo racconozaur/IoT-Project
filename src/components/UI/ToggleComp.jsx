@@ -7,25 +7,31 @@ import { set, ref, onValue, remove, update } from "firebase/database";
 
 const ToggleComp = (props) => {
 
-    
+    const [state, setIsOn] = useState(false)
 
-    const [LED, setLEDIsOn] = useState(false)
+    let property = props.property
+
+    let data = {
+        [property]: state
+    }
 
     
 
     const toggleHandler = () => {
-        setLEDIsOn(!LED)
-        update(ref(db, `/`), {LED});
+        setIsOn(!state)
+        update(ref(db, `/`), data);
+        console.log(data[property]);
     }
 
     return (
        <div className={cs.toggleContainer}>
             <Toggle
-                id='cheese-status'
-                defaultChecked={!LED}
+                id='status'
+                defaultChecked={!state}
                 onChange={toggleHandler} 
             />
-            <label className={cs.toggleLabel} htmlFor='cheese-status'>{props.name}</label>
+            <label className={cs.toggleLabel} htmlFor='status'>{props.name}</label>
+
        </div>
        
     );

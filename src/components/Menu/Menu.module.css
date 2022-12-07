@@ -1,5 +1,23 @@
 .menu{
     display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: space-around;
-    margin: 80px 0;
+    width: 100vw;
+}
+
+.indicatorMenu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.progressMenu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2{
+    color: aliceblue;
 }

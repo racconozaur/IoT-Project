@@ -12,24 +12,48 @@ function App() {
 
 	const [data, setData] = useState([])
 
-	useEffect(() => {
-		onValue(ref(db), (snapshot) => {
-			setData([])
-			const data = snapshot.val()
+	// function getData(){
+	// 	onValue(ref(db), async (snapshot) => {
+	
+	// 		const data = await snapshot.val()
 			
-			if(data !== null){
-				setData(data)
-			}
-		})
+	// 		if(data !== null){
+	// 			setData(data)
+	// 		}
+	// 	})
+	// }
+
+	const getAll = async () => {
+		try {
+			onValue(ref(db), async (snapshot) => {
+	
+				const data = await snapshot.val()
+				
+				if(data !== null){
+					setData(data)
+					return data
+				}
+			})
+		} catch (error) {
+			alert(error)
+		}
+	}
+
+	useEffect(() => {
+		getAll()
 	}, [])
+
+	
+
+
+
+
 
 	return (
 	<>
 		<Header/>
 		<Menu data={data}/>
 		
-
-		<ToggleComp name={'Light'} data={data}/>
 	</>
 	);
 }

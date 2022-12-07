@@ -13,7 +13,7 @@ const IndicatorBar = (props) => {
             <div className={cs.bar}>
                 <CircularProgressbar 
                     value={props.value} 
-                    text={`${props.value}%`}
+                    text={`${props.value} %`}
                     styles={buildStyles({
                         textColor: '#FFFFFF',
                         textSize: '16px',
